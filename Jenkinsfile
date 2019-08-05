@@ -1,9 +1,15 @@
 pipeline {
   agent any
+  environment {
+    CI = 'true'
+  }
   stages {
     stage('Build') {
       steps {
-        echo 'Build'
+        echo "Installing package requirements:"
+        sh '(cd $WORKSPACE/theserverproject && npm install)'
+        sh '(cd $WORKSPACE/theserverproject && npm run build)'
+        sh 'mv $WORKSPACE/theserverproject/build $WORKSPACE/theserverproject/html'
       }
     }
     stage('Test') {
@@ -11,9 +17,20 @@ pipeline {
         echo 'Test'
       }
     }
-    stage('Deploy') {
+    stage('Master-Deploy') {
+      when {
+        expression { env.BRANCH_NAME == 'master' }
+      }
       steps {
-        echo 'Deploy'
+        sh 'sshpass -p $BASESITEPASSWORD scp -r -oStrictHostKeyChecking=no $WORKSPACE/theserverproject/html/ basesite@$SERVER:$BASESITELOCATION'
+      }
+    }
+    stage('Staging-Deploy') {
+      when {
+        expression { env.BRANCH_NAME == 'staging'  }
+      }
+      steps {
+        sh 'sshpass -p $BASESITEPASSWORD scp -r -oStrictHostKeyChecking=no $WORKSPACE/theserverproject/html/ basesite@$SERVER:$BETABASESITELOCATION'
       }
     }
   }
