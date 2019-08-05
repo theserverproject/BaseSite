@@ -10,6 +10,9 @@ function App() {
         <p>
           Hello World!
         </p>
+        <p>
+          (This was automatically deployed!)
+        </p>
       </header>
     </div>
   );
