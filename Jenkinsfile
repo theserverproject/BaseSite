@@ -22,12 +22,12 @@ pipeline {
         expression { env.BRANCH_NAME == 'master' }
       }
       steps {
-        echo 'Master-Deploy'
+        sh 'sshpass -p $BASESITEPASSWORD scp -r -oStrictHostKeyChecking=no $WORKSPACE/theserverproject/html/ basesite@$SERVER:$BASESITELOCATION'
       }
     }
     stage('Staging-Deploy') {
       when {
-        expression { env.BRANCH_NAME == 'jenkinsSetup'  }
+        expression { env.BRANCH_NAME == 'staging'  }
       }
       steps {
         sh 'sshpass -p $BASESITEPASSWORD scp -r -oStrictHostKeyChecking=no $WORKSPACE/theserverproject/html/ basesite@$SERVER:$BETABASESITELOCATION'

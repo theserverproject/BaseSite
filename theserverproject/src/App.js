@@ -11,7 +11,7 @@ function App() {
           Hello World!
         </p>
         <p>
-          (This was automatically deployed!)
+          (This was automatically deployed, and is merged to the correct branch!)
         </p>
       </header>
     </div>
