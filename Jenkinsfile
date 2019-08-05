@@ -7,7 +7,9 @@ pipeline {
     stage('Build') {
       steps {
         echo "Installing package requirements:"
-        sh 'npm install $WORKSPACE/theserverproject'
+        sh '(cd $WORKSPACE/theserverproject && npm install)'
+        sh '(cd $WORKSPACE/theserverproject && npm run build)'
+        sh 'mv $WORKSPACE/theserverproject/build $WORKSPACE/theserverproject/html'
       }
     }
     stage('Test') {
@@ -25,10 +27,10 @@ pipeline {
     }
     stage('Staging-Deploy') {
       when {
-        expression { env.BRANCH_NAME == 'staging'  }
+        expression { env.BRANCH_NAME == 'jenkinsSetup'  }
       }
       steps {
-        echo 'Staging-Deploy'
+        sh 'sshpass -p $BASESITEPASSWORD scp -r -oStrictHostKeyChecking=no $WORKSPACE/theserverproject/html/ basesite@$SERVER:$BETABASESITELOCATION'
       }
     }
   }
