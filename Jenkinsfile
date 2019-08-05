@@ -7,7 +7,7 @@ pipeline {
     stage('Build') {
       steps {
         echo "Installing package requirements:"
-        sh 'npm install'
+        sh 'npm install $WORKSPACE/theserverproject'
       }
     }
     stage('Test') {
