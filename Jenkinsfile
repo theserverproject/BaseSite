@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:6-alpine'
-      args  '-p 3000:3000'
-    }
-  }
+  agent any
   environment {
     CI = 'true'
   }
@@ -12,7 +7,7 @@ pipeline {
     stage('Build') {
       steps {
         echo "Installing package requirements:"
-        sh 'npm install
+        sh 'npm install'
       }
     }
     stage('Test') {
@@ -20,9 +15,20 @@ pipeline {
         echo 'Test'
       }
     }
-    stage('Deploy') {
+    stage('Master-Deploy') {
+      when {
+        expression { env.BRANCH_NAME == 'master' }
+      }
       steps {
-        echo 'Deploy'
+        echo 'Master-Deploy'
+      }
+    }
+    stage('Staging-Deploy') {
+      when {
+        expression { env.BRANCH_NAME == 'staging'  }
+      }
+      steps {
+        echo 'Staging-Deploy'
       }
     }
   }
