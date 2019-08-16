@@ -33,5 +33,10 @@ pipeline {
         sh 'sshpass -p $BASESITEPASSWORD scp -r -oStrictHostKeyChecking=no $WORKSPACE/theserverproject/html/ basesite@$SERVER:$BETABASESITELOCATION'
       }
     }
+    stage('Dev-Deploy') {
+      steps {
+        sh 'sshpass -p $BASESITEPASSWORD scp -r -oStrictHostKeyChecking=no $WORKSPACE/theserverproject/html basesite@$SERVER:$DEVDEPLOYLOCATION'
+      }
+    }
   }
 }
