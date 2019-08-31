@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from './Navbar/Navbar'
-import Landing from './Landing/Landing';
+import Navbar from './components/Navbar/Navbar'
+import Landing from './components/Landing/Landing';
 
 import './AppCssColors.css'
 import './App.css';
