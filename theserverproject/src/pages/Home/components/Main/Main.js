@@ -1,20 +1,20 @@
 import React from 'react';
-import './Landing.css';
+import './Main.css';
 
 // Import componenets
 import Panel from '../../../../minorComponents/panel/Panel.js';
 
-const Landing = () => {
+const Main = () => {
 
     return (
-        <div id="landing">
+        <main id="main">
             <div class="content-seperator"/>
-            <Panel classOverride="landing-content">
+            <Panel classOverride="main-content">
                 <p>Hello World!</p>
             </Panel>
             <div class="content-seperator"/>
-        </div>
+        </main>
     );
 }
 
-export default Landing
+export default Main
