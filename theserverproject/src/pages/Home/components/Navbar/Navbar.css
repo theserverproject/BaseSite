@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: var(--navbar-height);
 }
 
 /* CSS IDs */
@@ -16,7 +17,7 @@
     flex: 0;
     display: flex;
     width: 100%;
-    height: 50px;
+    height: var(--navbar-height);
     background-color: var(--text-bg-color);
     border-bottom: 3px solid;
     border-color: var(--text-fg-color);

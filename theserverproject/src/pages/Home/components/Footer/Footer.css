@@ -1,0 +1,17 @@
+
+/* Footer IDs  */
+#footer {
+    width: 100vw;
+    height: var(--footer-height);
+    background-color: var(--text-bg-color);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer Classes */
+.footer-text {
+    color: var(--text-fg-color);
+    text-align: center;
+    margin: 0px;
+    font-size: 13px;
+}

@@ -1,11 +1,11 @@
 import React from 'react';
 import './Navbar.css';
-import Image from '../minorComponents/image/Image.js';
+import Image from '../../../../minorComponents/image/Image.js';
 
 const Navbar = () => {
     return (
         <div id="navbar">
-            <Image/>
+            <Image image="logo.png" defaultText="Logo not found"/>
             <p class="navbar-header">Projects</p>
             <p class="navbar-header">Resume</p>
             <p class="navbar-header">GitHub</p>
