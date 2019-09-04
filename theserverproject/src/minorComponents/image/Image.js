@@ -7,17 +7,19 @@ const Image = (props) => {
     let fallbackTextClass = props.textClassOverride ? props.textClassOverride + ' text-fallback' : 'text-fallback';
 
     let imageAltText = props.altText ? props.altText : "";
-    let imageClass = props.imageClassOverride ? props.imageClassOverride + ' image' : 'image';
+    let imageClass = props.imageClassOverride ? props.imageClassOverride + ' image-image' : 'image-image';
+
+    let classOverride = props.classOverride ? props.classOverride + ' image' : 'image';
 
     return (
-        <React.Fragment>
+        <div className={ classOverride }>
             {   props.image ? (
-                    <img src={ props.image } alt={ imageAltText } class={ imageClass  }/>
+                    <img src={ props.image } alt={ imageAltText } className={ imageClass  }/>
                 ) : (
-                     <p class={ fallbackTextClass }> { fallbackText } </p>
+                     <p className={ fallbackTextClass }> { fallbackText } </p>
                 )
             }
-        </React.Fragment>
+        </div>
     );
 }
 

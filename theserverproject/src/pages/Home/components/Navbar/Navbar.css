@@ -1,3 +1,15 @@
+/* CSS IDs */
+#navbar {
+    flex: 0;
+    display: flex;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: var(--text-bg-color);
+    border-bottom: 3px solid;
+    border-color: var(--text-fg-color);
+}
+
+
 /* CSS Classes */
 .navbar-header {
     font-family: 'Montserrat', sans-serif;
@@ -12,13 +24,6 @@
     height: var(--navbar-height);
 }
 
-/* CSS IDs */
-#navbar {
-    flex: 0;
-    display: flex;
-    width: 100%;
-    height: var(--navbar-height);
-    background-color: var(--text-bg-color);
-    border-bottom: 3px solid;
-    border-color: var(--text-fg-color);
+.underline {
+    text-decoration: underline;
 }
