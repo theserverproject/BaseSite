@@ -1,4 +1,4 @@
-/* Main Landing class div  */
+/* 1Main Landing class div  */
 #main {
     height: var(--landing-height);
     width: 100%;
@@ -15,6 +15,7 @@
     margin-left: 25%;
     margin-right: 25%;
     padding: 15px;
+    padding-top: 10px;
     overflow-y: scroll;
 }
 

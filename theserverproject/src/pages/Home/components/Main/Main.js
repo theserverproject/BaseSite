@@ -12,7 +12,7 @@ const Main = () => {
             <div className="content-seperator"/>
             <Panel classOverride="main-content">
                 <body>
-                    <h1>What is the Server Project?</h1>
+                    <h1 style={ { marginTop: '10px' } }>What is the Server Project?</h1>
                     <p>
                         The server project is as simple as it sounds. It is a home-owned server being used
                         for what servers are used best for: serving stuff. The website you're looking at right
@@ -25,10 +25,10 @@ const Main = () => {
                     <h1>What kind of server is it?</h1>
                     <p>
                         Obviously its the kind of server that serves things. Wait, you wanted the model?
-                        Its a referb Dell PowerEdge R710. What, that's not enough information for you?
-                        fine, here's a picture of it sitting in my living room
+                        It's a referb Dell PowerEdge R710. What, that's not enough information for you?
+                        Fine, here's a picture of it sitting in my living room
                         <br/><br/>
-                        <Image image="lvserver.png" altText="[This is strange, there should be a picture here. Please send an email to Ross-Alexandra@outlook.com informing him that the image has been stolen.]"/>
+                        <Image image="lvserver.jpg" altText="[This is strange, there should be a picture here. Please send an email to Ross-Alexandra@outlook.com informing him that the image has been stolen.]"/>
                         <br/><br/>
                     </p>
                     <h1>Ok this make sense, but who are you?</h1>
