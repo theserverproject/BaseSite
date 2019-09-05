@@ -5,10 +5,25 @@
     height: var(--footer-height);
     background-color: var(--text-bg-color);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 /* Footer Classes */
+.footer-left-pane {
+
+}
+
+.footer-center-pane {
+    height: 100%;
+    background-color: var(--text-bg-color);
+    display: flex;
+    flex-direction: column
+}
+
+.footer-right-pane {
+
+}
+
 .footer-text {
     color: var(--text-fg-color);
     text-align: center;
