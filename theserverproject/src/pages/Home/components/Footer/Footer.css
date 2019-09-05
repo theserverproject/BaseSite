@@ -5,28 +5,34 @@
     height: var(--footer-height);
     background-color: var(--text-bg-color);
     display: flex;
-    flex-direction: row;
 }
 
 /* Footer Classes */
 .footer-left-pane {
-
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1 0;
+    justify-content: center;
 }
 
 .footer-center-pane {
-    height: 100%;
-    background-color: var(--text-bg-color);
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    text-align: center;
+    flex: 1 0;
 }
 
 .footer-right-pane {
-
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    flex: 1 0;
+    justify-content: center;
 }
 
 .footer-text {
     color: var(--text-fg-color);
-    text-align: center;
     margin: 0px;
     font-size: 13px;
 }
