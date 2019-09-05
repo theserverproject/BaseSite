@@ -1,3 +1,7 @@
+image {
+    /* Todo: this should have default styling. */
+}
+
 .text-fallback {
     box-sizing: content-box;
     padding: 8px 4px;
@@ -8,6 +12,7 @@
     align-items: center;
 }
 
-.image {
+/* CSS for the image class's actual image.  */
+.image-image {
     background-color: var(--text-bg-color);
 }

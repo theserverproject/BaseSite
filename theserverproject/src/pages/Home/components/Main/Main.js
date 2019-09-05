@@ -8,11 +8,11 @@ const Main = () => {
 
     return (
         <main id="main">
-            <div class="content-seperator"/>
+            <div className="content-seperator"/>
             <Panel classOverride="main-content">
                 <p>Hello World!</p>
             </Panel>
-            <div class="content-seperator"/>
+            <div className="content-seperator"/>
         </main>
     );
 }

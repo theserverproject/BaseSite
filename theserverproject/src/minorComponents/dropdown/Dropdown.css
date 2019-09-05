@@ -1,0 +1,47 @@
+/* Controlling div */
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    align-self: flex-start;
+}
+
+/* Content div */
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    /* height of the navbar - 5 margin - 8 padding. */
+    top: calc(var(--navbar-actual-height) - 3px);
+    background-color: var(--text-bg-color);
+    color: var(--text-fg-color);
+    border: 3px;
+    border-style: solid;
+    border-top-style: none;
+    border-color: white;
+
+    /* Default item css */
+    text-align: center;
+}
+
+/* Content items */
+.dropdown-item {
+}
+
+/* Default text */
+.dropdown-title {
+    color: var(--text-fg-color);
+}
+
+.astext {
+    background-color: var(--text-bg-color);
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+ }
+
+.clicked-dropdown {
+    background-color: var(--text-bg-color);
+    color: var(--text-fg-color);
+}
