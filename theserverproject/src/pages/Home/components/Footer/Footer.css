@@ -5,6 +5,8 @@
     height: var(--footer-height);
     background-color: var(--text-bg-color);
     display: flex;
+    max-width: 100vw;
+    overflow: auto;
 }
 
 /* Footer Classes */
@@ -35,4 +37,10 @@
     color: var(--text-fg-color);
     margin: 0px;
     font-size: 13px;
+}
+
+.gh-logo {
+    max-height: var(--footer-height);
+    max-width: var(--footer-height);
+    margin-right:30px; 
 }

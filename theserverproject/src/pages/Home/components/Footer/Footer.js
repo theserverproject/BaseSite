@@ -15,7 +15,7 @@ const Footer = (props) => {
                 <p className="footer-text">bug, please email relavant information to: Ross-Alexandra@outlook.com</p>
             </div>
             <div className="footer-right-pane">
-                <Image image="logo.png" imageLink="http://" />
+                <Image imageClassOverride={ "gh-logo" } image="ghmark.png" imageLink="https://github.com/theserverproject/BaseSite" linkNewTab={ true } fallbackText="Github"/>
             </div>
         </footer>
     );
