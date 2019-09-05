@@ -8,44 +8,55 @@ class Dropdown extends React.Component {
 
         this.state = {
             dropdownVisible: false,
+            defaultDropdownTitleClass: 'dropdown-title',
         };
+
+        this.titleRef = React.createRef();
     }
 
-    showDropdown = () => {
-        this.setState({
-            dropdownVisible: true,
-        });
-    }
+    toggleDropdown = () => {
+        let newState = {
+            dropdownVisible: !this.state.dropdownVisible,
+        };
 
-    hideDropdown = () => {
-        this.setState({
-            dropdownVisible: false,
-        });
+        if (newState.dropdownVisible) {
+            newState.defaultDropdownTitleClass = 'clicked-dropdown'
+        }
+        else {
+            newState.defaultDropdownTitleClass = 'dropdown-title'
+        }
+
+       this.setState(newState);
     }
 
     render() {
 
-        let dropdownItems = [
-            <a key={ 'www.google.com' } href="www.google.com">Google</a>,
-            <a key={ 'www.amazon.ca' } href="www.amazon.ca">Amaxon</a>,
-            <a key={ 'www.twitter.com' } href="www.twitter.com">Twitter</a>
-        ];
+        let dropdownClass = (this.props.dropdownClassOverride ?
+                this.props.dropdownClassOverride + ' dropdown'
+            :
+                'dropdown'
+        );
 
-        let dropdownClass = this.props.dropdownClassOverride ? this.props.dropdownClassOverride + ' dropdown' : 'dropdown';
-        let dropdownButtonClass = this.props.dropdownTitleClassOverride ? this.props.dropdownTitleClassOverride + ' astext dropdown-title' : 'astext dropdown-title';
+        let dropdownButtonClass = (this.props.dropdownTitleClassOverride ?
+                this.props.dropdownTitleClassOverride + ' astext ' + this.state.defaultDropdownTitleClass
+            :
+                'astext ' + this.state.defaultDropdownTitleClass
+        );
 
-        //let dropdownClass = props.dropdownClassOverride ? props.dropdownClassOverride + ' dropdown-content' : 'dropdown-content';
-        let dropdownItemsClass = 'dropdown-content';
+        let dropdownContentClass = this.props.dropdownContentClassOverride ? this.props.dropdownContentClassOverride + ' dropdown-content' : 'dropdown-content';
+  //      let dropdownContentClass = 'dropdown-content';
 
         return (
             <div className={ dropdownClass }>
-                <button className={ dropdownButtonClass } onClick={ this.showDropdown }>
+                <button ref={ this.titleRef } className={ dropdownButtonClass } onClick={ this.toggleDropdown }>
                     { this.props.children }
                 </button>
                 {
+                    // If the dropdown is visible, then we should set its width equal
+                    // to that of the Title, and display it.
                     this.state.dropdownVisible &&
-                    <div className={ dropdownItemsClass }>
-                        { dropdownItems }
+                    <div className={ dropdownContentClass } style={ { width: this.titleRef.current.offsetWidth } }>
+                        { this.props.dropdownItems }
                     </div>
                 }
            </div>

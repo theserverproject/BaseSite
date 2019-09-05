@@ -27,3 +27,8 @@
 .underline {
     text-decoration: underline;
 }
+
+.dropdown-items {
+    color: var(--text-fg-color);
+    text-decoration: none;
+}
