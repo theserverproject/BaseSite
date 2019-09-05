@@ -10,7 +10,6 @@ const Image = (props) => {
     // Image classes
     let imageAltText = props.altText ? props.altText : "";
     let imageClass = props.imageClassOverride ? props.imageClassOverride + ' image-image' : 'image-image';
-    let classOverride = props.classOverride ? props.classOverride + ' image' : 'image';
 
     if (!props.image) {
         return <p className={ fallbackTextClass}>{fallbackText}</p>;
@@ -26,11 +25,13 @@ const Image = (props) => {
         // set to '', then it will open in the
         // same page.
         let target = '';
+        let rel = '';
         if (props.linkNewTab) {
             target = '_blank';
+            rel = "noopener noreferrer"
         }
 
-        return <a href={ props.imageLink } target={ target }>{imgHtml}</a>;
+        return <a href={ props.imageLink } target={ target } rel={ rel }>{imgHtml}</a>;
     }
 
     return imgHtml;
