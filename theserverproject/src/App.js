@@ -1,19 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import Navbar from './Navbar/Navbar'
+import Landing from './Landing/Landing';
+
+import './AppCssColors.css'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World!
-        </p>
-        <p>
-          (This was automatically deployed, and is merged to the correct branch!)
-        </p>
-      </header>
+    <div id="page-content">
+      <Navbar/>
+      <Landing/>
     </div>
   );
 }

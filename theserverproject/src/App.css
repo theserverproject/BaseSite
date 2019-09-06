@@ -1,5 +1,12 @@
+#page-content {
+  height: 100vh;
+}
+
+/* Default app css */
 .App {
   text-align: center;
+  flex: 1;
+  overflow: auto;
 }
 
 .App-logo {

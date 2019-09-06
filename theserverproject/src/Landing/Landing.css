@@ -1,0 +1,5 @@
+#landing {
+    background-color: var(--text-bg-color);
+    color: var(--text-fg-color);
+    height: 90%;
+}
