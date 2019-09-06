@@ -11,7 +11,8 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    /* height of the navbar - 5 margin - 8 padding. */
+
+    /* height of the navbar - 3 for margin. */
     top: calc(var(--navbar-actual-height) - 3px);
     background-color: var(--text-bg-color);
     color: var(--text-fg-color);
@@ -22,10 +23,6 @@
 
     /* Default item css */
     text-align: center;
-}
-
-/* Content items */
-.dropdown-item {
 }
 
 /* Default text */

@@ -11,6 +11,10 @@ class Dropdown extends React.Component {
             defaultDropdownTitleClass: 'dropdown-title',
         };
 
+        // Create a referece to the titel so that we
+        // can later get it's width for the dropdown.
+        // Can't have a static width because size of
+        // the page changes with browser.
         this.titleRef = React.createRef();
     }
 
@@ -44,7 +48,6 @@ class Dropdown extends React.Component {
         );
 
         let dropdownContentClass = this.props.dropdownContentClassOverride ? this.props.dropdownContentClassOverride + ' dropdown-content' : 'dropdown-content';
-  //      let dropdownContentClass = 'dropdown-content';
 
         return (
             <div className={ dropdownClass }>

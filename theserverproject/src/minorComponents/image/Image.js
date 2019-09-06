@@ -12,7 +12,7 @@ const Image = (props) => {
     let imageClass = props.imageClassOverride ? props.imageClassOverride + ' image-image' : 'image-image';
 
     if (!props.image) {
-        return <p className={ fallbackTextClass}>{fallbackText}</p>;
+        return <p className={ fallbackTextClass }>{ fallbackText }</p>;
 
     }
 
@@ -33,7 +33,7 @@ const Image = (props) => {
             rel = "noopener noreferrer"
         }
 
-        return <a href={ props.imageLink } target={ target } rel={ rel }>{imgHtml}</a>;
+        return <a href={ props.imageLink } target={ target } rel={ rel }>{ imgHtml }</a>;
     }
 
     return imgHtml;
