@@ -33,7 +33,7 @@ const Main = () => {
                     </p>
                     <h1>Ok this make sense, but who are you?</h1>
                     <p>
-                        Wow, thats so forward, alright. I'm a 4th year software engineering student at
+                        Wow, thats so forward, alright. I'm a 4<sup>th</sup> year software engineering student at
                         the University of Victoria with interests in creating scaleable, sustainable,
                         functional software, and machine learning (though everyone is interested in
                         ML here.)

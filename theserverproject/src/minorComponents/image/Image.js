@@ -24,6 +24,8 @@ const Image = (props) => {
         // link will open in a new page. If its
         // set to '', then it will open in the
         // same page.
+        // rel noopner noreferrer is needed to stop
+        // a security vulnerability repoted by React.
         let target = '';
         let rel = '';
         if (props.linkNewTab) {

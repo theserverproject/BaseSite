@@ -1,7 +1,7 @@
-/* 1Main Landing class div  */
+/* Main Landing class div  */
 #main {
-    height: var(--landing-height);
     width: 100%;
+    height: var(--landing-height);
     background-color: var(--empty-pane-color);
 }
 
@@ -9,8 +9,8 @@
 .main-content {
     /* 15*2 for padding. 90% because 2 content seperators.  */
     height: calc(90% - 15px - 15px);
-    display: inline-block;
     width: 50%;
+    display: inline-block;
     vertical-align: top;
     margin-left: 25%;
     margin-right: 25%;
