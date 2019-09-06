@@ -2,7 +2,7 @@ import React from 'react'
 import './Footer.css'
 
 // Import minor componenets needed.
-import Image from '../../../../minorComponents/image/Image.js'
+import Image from '../../../../basicComponents/image/Image.js'
 
 const Footer = (props) => {
     return (

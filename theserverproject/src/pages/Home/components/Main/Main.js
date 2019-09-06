@@ -2,8 +2,8 @@ import React from 'react';
 import './Main.css';
 
 // Import componenets
-import Panel from '../../../../minorComponents/panel/Panel.js';
-import Image from '../../../../minorComponents/image/Image.js';
+import Panel from '../../../../basicComponents/panel/Panel.js';
+import Image from '../../../../basicComponents/image/Image.js';
 
 const Main = () => {
 
