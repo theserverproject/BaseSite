@@ -18,7 +18,14 @@ class Dropdown extends React.Component {
         this.titleRef = React.createRef();
     }
 
-    toggleDropdown = () => {
+    toggleDropdown = (ifOpen=false) => {
+
+        // If the dropdown is closed and onlyIfOpen is
+        // true, then return and do nothing.
+        if (ifOpen === true && !this.state.dropdownVisible) {
+            return null;
+        }
+
         let newState = {
             dropdownVisible: !this.state.dropdownVisible,
         };
@@ -50,15 +57,18 @@ class Dropdown extends React.Component {
         let dropdownContentClass = this.props.dropdownContentClassOverride ? this.props.dropdownContentClassOverride + ' dropdown-content' : 'dropdown-content';
 
         return (
-            <div className={ dropdownClass }>
+            // toggleDropdown(true) here allows the dropdown to close when the users mouse
+            // leaves the button area.
+            <div className={ dropdownClass } onMouseLeave={ () => { this.toggleDropdown(true) } }>
                 <button ref={ this.titleRef } className={ dropdownButtonClass } onClick={ this.toggleDropdown }>
                     { this.props.children }
                 </button>
                 {
                     // If the dropdown is visible, then we should set its width equal
                     // to that of the Title, and display it.
+                    // OnMouseLeave here makes the dropdown close when a user's mouse leaves the dropdown.
                     this.state.dropdownVisible &&
-                    <div className={ dropdownContentClass } style={ { width: this.titleRef.current.offsetWidth } }>
+                    <div className={ dropdownContentClass } style={ { width: this.titleRef.current.offsetWidth } } onMouseLeave={ this.toggleDropdown }>
                         { this.props.dropdownItems }
                     </div>
                 }
