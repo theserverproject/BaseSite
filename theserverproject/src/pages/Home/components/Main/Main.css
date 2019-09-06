@@ -1,0 +1,25 @@
+/* Main Landing class div  */
+#main {
+    width: 100%;
+    height: var(--landing-height);
+    background-color: var(--empty-pane-color);
+}
+
+/* Landing class CSS  */
+.main-content {
+    /* 15*2 for padding. 90% because 2 content seperators.  */
+    height: calc(90% - 15px - 15px);
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 15px;
+    padding-top: 10px;
+    overflow-y: scroll;
+}
+
+.content-seperator {
+    width: 100%;
+    height: 5%;
+}
