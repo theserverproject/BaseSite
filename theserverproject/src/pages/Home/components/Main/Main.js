@@ -11,7 +11,7 @@ const Main = () => {
         <main id="main">
             <div className="content-seperator"/>
             <Panel classOverride="main-content">
-                <body>
+                <div role="main">
                     <h1 className="heading" style={ { marginTop: '10px' } }>What is the Server Project?</h1>
                     <p className="paragraph">
                         The server project is as simple as it sounds. It is a home-owned server being used
@@ -51,7 +51,7 @@ const Main = () => {
                         my projects on their own computers. From there, it's history, and I now have
                         a <b>very</b> loud machine sitting in my living room.
                     </p>
-                </body>
+                </div>
             </Panel>
             <div className="content-seperator"/>
         </main>
