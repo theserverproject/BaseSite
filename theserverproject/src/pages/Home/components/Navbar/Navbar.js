@@ -2,8 +2,8 @@ import React from 'react';
 import './Navbar.css';
 
 // Import the minor components needed for this.
-import Image from '../../../../minorComponents/image/Image.js';
-import Dropdown from '../../../../minorComponents/dropdown/Dropdown.js';
+import Image from '../../../../basicComponents/image/Image.js';
+import Dropdown from '../../../../basicComponents/dropdown/Dropdown.js';
 
 const Navbar = () => {
 
