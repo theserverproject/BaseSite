@@ -19,7 +19,7 @@ const Main = () => {
                         now is served off of it.
                         <br/><br/>
                         This server is also used to host live versions of my personal projects, as well as
-                        the personal projects of some of my friend. If you're curious about interacting with
+                        the personal projects of some of my friends. If you're curious about interacting with
                         my personal projects, please navigate to the projects page (link in the nav-bar).
                     </p>
                     <h1 className="heading">What kind of server is it?</h1>
