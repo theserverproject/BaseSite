@@ -1,0 +1,3 @@
+[submodule "theserverproject/src/basicComponents"]
+	path = theserverproject/src/basicComponents
+	url = https://github.com/theserverproject/basicComponents

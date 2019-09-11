@@ -1,5 +1,15 @@
+#page-content {
+  height: 100vh;
+  display: flex;
+  flex: 0 1;
+  flex-direction: column;
+}
+
+/* Default app css */
 .App {
   text-align: center;
+  flex: 1;
+  overflow: auto;
 }
 
 .App-logo {

@@ -1,0 +1,34 @@
+/* CSS IDs */
+#navbar {
+    flex: 0;
+    display: flex;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: var(--text-bg-color);
+    border-bottom: 3px solid;
+    border-color: var(--text-fg-color);
+}
+
+
+/* CSS Classes */
+.navbar-header {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    padding: 8px 0px;    
+    font-size: 30px;
+    color: var(--text-fg-color);
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--navbar-height);
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.dropdown-items {
+    color: var(--text-fg-color);
+    text-decoration: none;
+}

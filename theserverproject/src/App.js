@@ -1,21 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import Navbar from './pages/Home/components/Navbar/Navbar';
+import Main from './pages/Home/components/Main/Main';
+import Footer from './pages/Home/components/Footer/Footer';
+
+// Import App CSS classes.
+import './AppCssColors.css';
 import './App.css';
 
+//Import Home Page CSS classes.
+import './pages/Home/HomePageVariables.css';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World!
-        </p>
-        <p>
-          (This was automatically deployed, and is merged to the correct branch!)
-        </p>
-      </header>
-    </div>
-  );
+    return (
+        <div id="page-content">
+            <Navbar/>
+            <Main/>
+            <Footer/>
+        </div>
+    );
 }
 
 export default App;
