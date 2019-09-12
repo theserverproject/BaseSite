@@ -38,7 +38,7 @@ const Main = () => {
                         functional software, and machine learning (though everyone is interested in
                         ML here.)
                         <br/>
-                        I love writting software, and as such I'm often working on various personal
+                        I love writing software, and as such I'm often working on various personal
                         projects, from a CLI tool to solve Sudoku puzzles (using human methods and
                         outputting a list of moves and why) to... well this.
                     </p>
