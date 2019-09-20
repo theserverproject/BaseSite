@@ -5,7 +5,8 @@
     height: var(--footer-height);
     background-color: var(--text-bg-color);
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 /* Footer Classes */
