@@ -24,9 +24,9 @@ const Main = () => {
                     </p>
                     <h1 className="heading">What kind of server is it?</h1>
                     <p className="paragraph">
-                        Obviously its the kind of server that serves things. Wait, you wanted the model?
+                        Obviously it's the kind of server that serves things. Wait, you wanted the model?
                         It's a referb Dell PowerEdge R710. What, that's not enough information for you?
-                        Fine, here's a picture of it sitting in my living room
+                        Fine, here's a picture of it sitting in my living room.
                         <br/><br/>
                         <Image image="lvserver.jpg" altText="[This is strange, there should be a picture here. Please send an email to Ross-Alexandra@outlook.com informing him that the image has been stolen.]"/>
                         <br/><br/>
@@ -34,9 +34,9 @@ const Main = () => {
                     <h1 className="heading">Ok this make sense, but who are you?</h1>
                     <p className="paragraph">
                         Wow, thats so forward, alright. I'm a 4<sup>th</sup> year software engineering student at
-                        the University of Victoria with interests in creating scaleable, sustainable,
-                        functional software, and machine learning (though everyone is interested in
-                        ML here.)
+                        the University of Victoria with interests in creating scalable, sustainable,
+                        and functional software, as well as machine learning (though it seems everyone is interested in
+                        machine learning here).
                         <br/>
                         I love writing software, and as such I'm often working on various personal
                         projects, from a CLI tool to solve Sudoku puzzles (using human methods and
