@@ -16,11 +16,8 @@ const Main = () => {
                     <p className="paragraph">
                         The server project is as simple as it sounds. It is a home-owned server being used
                         for what servers are used best for: serving stuff. The website you're looking at right
-                        now is served off of it.
-                        <br/><br/>
-                        This server is also used to host live versions of my personal projects, as well as
-                        the personal projects of some of my friends. If you're curious about interacting with
-                        my personal projects, please navigate to the projects page (link in the nav-bar).
+                        now is served off of it, and all of my hostable projects are hosted off that very server
+                        right now! 
                     </p>
                     <h1 className="heading">What kind of server is it?</h1>
                     <p className="paragraph">
@@ -33,14 +30,14 @@ const Main = () => {
                     </p>
                     <h1 className="heading">Ok this make sense, but who are you?</h1>
                     <p className="paragraph">
-                        Wow, thats so forward, alright. I'm a 4<sup>th</sup> year software engineering student at
+                        Wow, thats so forward, alright. I'm a recent grad with a bachelors of software engineering from
                         the University of Victoria with interests in creating scalable, sustainable,
-                        and functional software, as well as machine learning (though it seems everyone is interested in
-                        machine learning here).
+                        and functional (as in, it works, I'm paradigm agnostic) software.
                         <br/>
                         I love writing software, and as such I'm often working on various personal
-                        projects, from a CLI tool to solve Sudoku puzzles (using human methods and
-                        outputting a list of moves and why) to... well this.
+                        projects, from a web-app/Discord bot to help a community I'm involved with
+                        to a distributed imbedded system used for tracking customer volumes in a store
+                        to... well this.
                     </p>
                     <h1 className="heading">Interesting... but why buy a server?</h1>
                     <p className="paragraph">
