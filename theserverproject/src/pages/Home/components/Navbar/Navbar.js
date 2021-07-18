@@ -3,16 +3,8 @@ import './Navbar.css';
 
 // Import the minor components needed for this.
 import Image from '../../../../basicComponents/image/Image.js';
-import Dropdown from '../../../../basicComponents/dropdown/Dropdown.js';
 
 const Navbar = () => {
-
-    let dropdownItems = [
-        <a key={ 'EKWAN' } href="http://ethanscorner.theserverproject.com/" target='_blank' rel="noopener noreferrer" className='dropdown-items'>Ethan Kwan</a>,
-        <a key={ 'LMARSHALL' } href="http://landonscorner.theserverproject.com/" target='_blank' rel="noopener noreferrer" className='dropdown-items'>Landon Marshall</a>,
-        <a key={ 'JMEGYESI' } href="http://jeremyscorner.theserverproject.com/" target='_blank' rel="noopener noreferrer" className='dropdown-items'>Jeremy Megyesi</a>,
-        <a key={ 'JMCINTOSH' } href="http://joshscorner.theserverproject.com/" target='_blank' rel="noopener noreferrer" className='dropdown-items'>Josh McIntosh</a>,
-    ];
 
     return (
         <header id="navbar">

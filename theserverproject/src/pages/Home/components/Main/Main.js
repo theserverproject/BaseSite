@@ -17,7 +17,7 @@ const Main = () => {
                         The server project is as simple as it sounds. It is a home-owned server being used
                         for what servers are used best for: serving stuff. The website you're looking at right
                         now is served off of it, and all of my hostable projects are hosted off that very server
-                        right now!
+                        right now! 
                     </p>
                     <h1 className="heading">What kind of server is it?</h1>
                     <p className="paragraph">
