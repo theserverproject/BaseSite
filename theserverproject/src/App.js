@@ -59,9 +59,7 @@ class App extends Component {
                 </div>
                 <div className="app-body">
                     <div className="content-body">
-                        <Fade in={true}>
-                            {contentPage}
-                        </Fade>
+                        {contentPage}
                     </div>
                 </div>
                 <div className="app-footer">
@@ -76,7 +74,7 @@ class App extends Component {
                 <div className="left-arrow-box"
                      onMouseEnter={() => this.setState({leftArrowVisible: true})}
                      onMouseLeave={() => this.setState({leftArrowVisible: false})}
-                     onClick={() => this.setState({contentPage: this.state.contentPage - 1})}
+                     onClick={() => displayLeftArrow && this.setState({contentPage: this.state.contentPage - 1})}
                 >
                     {displayLeftArrow ? 
                         <Fade in={true}>
@@ -91,7 +89,7 @@ class App extends Component {
                 <div className="right-arrow-box"
                      onMouseEnter={() => this.setState({rightArrowVisible: true})}
                      onMouseLeave={() => this.setState({rightArrowVisible: false})}
-                     onClick={() => this.setState({contentPage: this.state.contentPage + 1})}
+                     onClick={() => displayRightArrow && this.setState({contentPage: this.state.contentPage + 1})}
                 >
                     {displayRightArrow ? 
                         <Fade in={true}>

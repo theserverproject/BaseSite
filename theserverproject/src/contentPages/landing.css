@@ -1,4 +1,4 @@
-.content-title {
+.landing-title {
     color: white;
     font-size: 4.5rem;
     font-family: Roboto,sans-serif;
@@ -18,12 +18,12 @@
     margin-top: -12%;
 }
 
-.content {
+.landing {
     text-align: center;
     margin-top: 11%;
 }
 
-.content > p {
+.landing > p {
     color: white;
     font-family: 'Open Sans',sans-serif;
     font-size: 1.25rem;
