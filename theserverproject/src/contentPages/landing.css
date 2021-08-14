@@ -1,0 +1,30 @@
+.content-title {
+    color: white;
+    font-size: 4.5rem;
+    font-family: Roboto,sans-serif;
+    margin: 0;
+    width: 100%;
+    margin-top: 5.5%;
+    text-align: center;
+}
+
+.headshot {
+    overflow: hidden;
+    width: 161px;
+    height: 161px;
+    border-radius: 50%;
+    margin-left: 4%;
+    margin-right: 7%;
+    margin-top: -12%;
+}
+
+.content {
+    text-align: center;
+    margin-top: 11%;
+}
+
+.content > p {
+    color: white;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 1.25rem;
+}

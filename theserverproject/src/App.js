@@ -1,7 +1,10 @@
-import {Component} from 'react';
+import React, {Component} from 'react';
+import { Landing, JobHistory } from './contentPages';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import { Fade } from '@material-ui/core';
 
 import logo from './assets/Logo.png';
-import headshot from './assets/Headshot.jpg'
 import './App.css';
 
 class App extends Component {
@@ -10,8 +13,16 @@ class App extends Component {
         super(props);
 
         this.state = {
-            activeLink: "Home"
+            activeLink: "Home",
+            contentPage: 1,
+            leftArrowVisible: false,
+            rightArrowVisible: false,
         }
+
+        this.contentPages = [
+            <Landing/>,
+            <JobHistory/>
+        ]
     }
 
     navigate = (e) => {
@@ -20,9 +31,9 @@ class App extends Component {
         this.setState({activeLink: e.target.id});
     }
 
-    navigate
-
     render() {
+
+        const contentPage = this.contentPages[this.state.contentPage - 1]
 
         const linkTree = ["Home", "Projects"].map((value, indx, arr) => {
             return (
@@ -32,6 +43,9 @@ class App extends Component {
                     <div className={"navigator-link"} id={value} onClick={e => {this.navigate(e)}}>{value}</div>
             )
         });
+
+        const displayRightArrow = this.state.contentPage < this.contentPages.length && this.state.rightArrowVisible;
+        const displayLeftArrow = this.state.contentPage > 1 && this.state.leftArrowVisible;
 
         return (
             <div className="app">
@@ -45,16 +59,9 @@ class App extends Component {
                 </div>
                 <div className="app-body">
                     <div className="content-body">
-                        {/* Internal content. This should be extracted. */}
-                            <p className="content-title">Ross Alexandra</p>
-                            <img className="headshot" src={headshot} alt="missing"/>
-                            <div className="content">
-                                <p>Welcome to my portfolio!</p>
-                                <br/>
-                                <p>To learn more about this website, click on the edges of the page.</p>
-                                <p>To see a list of my projects, click the projects link in the top right.</p>
-                            </div>
-                        {/* End of internal content.*/}
+                        <Fade in={true}>
+                            {contentPage}
+                        </Fade>
                     </div>
                 </div>
                 <div className="app-footer">
@@ -65,6 +72,36 @@ class App extends Component {
                             </p>
                         </div>
                     </div>
+                </div>
+                <div className="left-arrow-box"
+                     onMouseEnter={() => this.setState({leftArrowVisible: true})}
+                     onMouseLeave={() => this.setState({leftArrowVisible: false})}
+                     onClick={() => this.setState({contentPage: this.state.contentPage - 1})}
+                >
+                    {displayLeftArrow ? 
+                        <Fade in={true}>
+                            <NavigateBeforeIcon className="left-arrow" fontSize="inherit"/>
+                        </Fade>
+                    :
+                        <Fade in={false}>
+                            <NavigateBeforeIcon fontSize="inherit"/>
+                        </Fade>
+                    }
+                </div>
+                <div className="right-arrow-box"
+                     onMouseEnter={() => this.setState({rightArrowVisible: true})}
+                     onMouseLeave={() => this.setState({rightArrowVisible: false})}
+                     onClick={() => this.setState({contentPage: this.state.contentPage + 1})}
+                >
+                    {displayRightArrow ? 
+                        <Fade in={true}>
+                            <NavigateNextIcon className="right-arrow" fontSize="inherit"/>
+                        </Fade>
+                    :
+                        <Fade in={false}>
+                            <NavigateNextIcon fontSize="inherit"/>
+                        </Fade>
+                    }
                 </div>
             </div>
         );
