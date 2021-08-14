@@ -52,7 +52,7 @@ class App extends Component {
                                 <p>Welcome to my portfolio!</p>
                                 <br/>
                                 <p>To learn more about this website, click on the edges of the page.</p>
-                                <p>To see my actual portfolio, click the link in the top right.</p>
+                                <p>To see a list of my projects, click the projects link in the top right.</p>
                             </div>
                         {/* End of internal content.*/}
                     </div>
