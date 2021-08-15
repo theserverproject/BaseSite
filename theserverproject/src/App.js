@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Landing, JobHistory } from './contentPages';
+import { Landing, JobHistory, Education } from './contentPages';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import { Fade } from '@material-ui/core';
@@ -21,7 +21,8 @@ class App extends Component {
 
         this.contentPages = [
             <Landing/>,
-            <JobHistory/>
+            <Education/>,
+            <JobHistory/>,
         ]
     }
 

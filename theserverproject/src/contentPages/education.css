@@ -1,0 +1,124 @@
+.education-title {
+    color: white;
+    font-size: 4.5rem;
+    font-family: Roboto,sans-serif;
+    margin: 0;
+    width: 100%;
+    margin-top: 5.5%;
+    text-align: center;
+}
+
+.education-subtitle {
+    color: white;
+    font-size: 3.5rem;
+    font-family: Roboto,sans-serif;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.education {
+    text-align: center;
+    margin-top: 8%;
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    justify-content: space-around;
+}
+
+.education > p {
+    color: white;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 1.25rem;
+}
+
+.education-card {
+    height: 260px;
+    width: auto;
+}
+
+.education-circle {
+    height: 120px;
+    width: 120px;
+    margin-bottom: 10px;
+    border-radius: 59%;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.education-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.education-card-content > p {
+    margin: 0 0 10px 0;
+}
+
+.education-card-title {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.education-card-subtext {
+    font-size: 15px;
+}
+
+.degree-icon {
+    height: 75%;
+    width: auto;
+}
+
+.gpa-icon {
+    height: 80%;
+    width: auto;
+}
+
+.calendar-icon {
+    height: 65%;
+    width: auto;
+}
+
+.hover-text {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.hover-text:hover {
+    cursor: pointer;
+}
+
+.grade-table-modal {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 750px;
+}
+
+.grade-table-content {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.transcript-modal {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 750px;
+}
+
+.transcript-iframe {
+    width: 660px;
+    height: 710px;
+}

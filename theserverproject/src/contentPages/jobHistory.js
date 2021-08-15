@@ -75,7 +75,7 @@ function JobHistory() {
     const historyTransition = useTransition(jobHistory, {
         from: {opacity: 0},
         enter: {opacity: 1},
-        trail: 150
+        trail: 100
     });
 
     const fragment = historyTransition((style, item) => {
