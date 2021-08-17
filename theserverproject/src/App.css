@@ -87,8 +87,8 @@
     position: absolute;
     color: white;
     font-size: 5rem;
-    height: 100%;
-    display: flex;
+    margin-top: 80px;
+    height: calc(100% - 80px);    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -100,7 +100,8 @@
     left: calc(100vw - 25%);
     color: white;
     font-size: 5rem;
-    height: 100%;
+    margin-top: 80px;
+    height: calc(100% - 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;

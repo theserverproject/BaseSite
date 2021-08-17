@@ -21,30 +21,53 @@ class App extends Component {
         }
 
         this.portfolioPages = [
-            <Landing/>,
-            <Education/>,
-            <JobHistory/>,
-            <LanguageProficiency/>,
-            <Projects/>
+            {component: <Landing/>, link: "Home"},
+            {component: <Education/>, link: "Education"},
+            {component: <JobHistory/>, link: "Work History"},
+            {component: <LanguageProficiency/>, link: "Proficiencies"},
+            {component: <Projects/>, link: "Projects"}
         ]
     }
 
     navigate = (e) => {
         e.preventDefault();
 
-        this.setState({activeLink: e.target.id});
+        const pageLinks = this.portfolioPages.reduce((aggregator, value, indx) => {
+            aggregator[value.link] = indx + 1;
+            return aggregator;
+        }, {});
+
+        const contentPage = pageLinks[e.target.id]
+
+        this.setState({
+            activeLink: e.target.id,
+            contentPage
+        });
+    }
+
+    incrementPage = (increment) => {
+        const pageLinks = this.portfolioPages.reduce((aggregator, value, indx) => {
+            aggregator[indx + 1] = value.link;
+            return aggregator;
+        }, {});
+
+        const activeLink = pageLinks[this.state.contentPage + increment];
+        this.setState({
+            activeLink,
+            contentPage: this.state.contentPage + increment
+        });
     }
 
     render() {
 
-        const contentPage = this.portfolioPages[this.state.contentPage - 1]
+        const contentPage = this.portfolioPages[this.state.contentPage - 1].component;
 
-        const linkTree = ["Home", "Projects"].map((value, indx, arr) => {
+        const linkTree = this.portfolioPages.map((value, indx, arr) => {
             return (
-                value === this.state.activeLink ? 
-                    <div className={"active-navigator-link"}>{value}</div>
+                value.link === this.state.activeLink ? 
+                    <div className={"active-navigator-link"}>{value.link}</div>
                 :
-                    <div className={"navigator-link"} id={value} onClick={e => {this.navigate(e)}}>{value}</div>
+                    <div className={"navigator-link"} id={value.link} onClick={e => {this.navigate(e)}}>{value.link}</div>
             )
         });
 
@@ -78,7 +101,7 @@ class App extends Component {
                 <div className="left-arrow-box"
                      onMouseEnter={() => this.setState({leftArrowVisible: true})}
                      onMouseLeave={() => this.setState({leftArrowVisible: false})}
-                     onClick={() => displayLeftArrow && this.setState({contentPage: this.state.contentPage - 1})}
+                     onClick={() => displayLeftArrow && this.incrementPage(-1)}
                 >
                     {displayLeftArrow ? 
                         <Fade in={true}>
@@ -93,7 +116,7 @@ class App extends Component {
                 <div className="right-arrow-box"
                      onMouseEnter={() => this.setState({rightArrowVisible: true})}
                      onMouseLeave={() => this.setState({rightArrowVisible: false})}
-                     onClick={() => displayRightArrow && this.setState({contentPage: this.state.contentPage + 1})}
+                     onClick={() => displayRightArrow && this.incrementPage(1)}
                 >
                     {displayRightArrow ? 
                         <Fade in={true}>
