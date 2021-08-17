@@ -71,7 +71,7 @@ class App extends Component {
             )
         });
 
-        const displayRightArrow = this.state.contentPage < this.portfolioPages.length && this.state.rightArrowVisible;
+        const displayRightArrow = (this.state.contentPage < this.portfolioPages.length && this.state.rightArrowVisible) || this.state.contentPage === 1;
         const displayLeftArrow = this.state.contentPage > 1 && this.state.leftArrowVisible;
 
         return (
