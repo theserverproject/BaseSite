@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import { Landing, JobHistory, Education, LanguageProficiency } from './contentPages';
+import { Landing, JobHistory, Education, LanguageProficiency } from './portfolioPages';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import { Fade } from '@material-ui/core';
 
 import logo from './assets/Logo.png';
 import './App.css';
+import Projects from './portfolioPages/projects';
 
 class App extends Component {
 
@@ -19,12 +20,12 @@ class App extends Component {
             rightArrowVisible: false,
         }
 
-        this.contentPages = [
+        this.portfolioPages = [
             <Landing/>,
             <Education/>,
             <JobHistory/>,
             <LanguageProficiency/>,
-            
+            <Projects/>
         ]
     }
 
@@ -36,7 +37,7 @@ class App extends Component {
 
     render() {
 
-        const contentPage = this.contentPages[this.state.contentPage - 1]
+        const contentPage = this.portfolioPages[this.state.contentPage - 1]
 
         const linkTree = ["Home", "Projects"].map((value, indx, arr) => {
             return (
@@ -47,7 +48,7 @@ class App extends Component {
             )
         });
 
-        const displayRightArrow = this.state.contentPage < this.contentPages.length && this.state.rightArrowVisible;
+        const displayRightArrow = this.state.contentPage < this.portfolioPages.length && this.state.rightArrowVisible;
         const displayLeftArrow = this.state.contentPage > 1 && this.state.leftArrowVisible;
 
         return (
