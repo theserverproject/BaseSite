@@ -12,10 +12,10 @@ function LanguageProficiency() {
     });
 
     const languagesData = {
-        labels: ["Python", "JavaScript", "Java", "C/C++", "Racket", "SML", "Go", "React", "Django", "Flask"],
+        labels: ["Python", "JavaScript", "Java", "C/C++", "Dart", "Racket", "SML", "Go", "React", "Django", "Flask", "React-Native", "Flutter"],
         datasets: [{
             label: "Language Experience",
-            data: [5, 5, 4, 3, 2, 2, 1, null, null, null],
+            data: [6, 6, 5, 4, 3, 2, 2, 1, null, null, null, null, null],
             backgroundColor: [
                 "rgba(0, 40, 200, .75)",
                 "rgba(0, 40, 200, .75)",
@@ -28,7 +28,7 @@ function LanguageProficiency() {
         }, 
         {
             label: "Framework Experience",
-            data: [null, null, null, null, null, null, null, 5, 5, 3],
+            data: [null, null, null, null, null, null, null, null, 6, 6, 4, 3, 3],
             backgroundColor: [
                 "rgba(0, 150, 40, .75)",
                 "rgba(0, 150, 40, .75)",
@@ -40,10 +40,11 @@ function LanguageProficiency() {
     const yAxisLabels = {
         0: "",
         1: "Minimal Experience",
-        2: "Schoolwork Only",
-        3: "Used in a Large Project",
-        4: "Used Professionally",
-        5: "Used in a Project & Professionally",
+        2: "Basic competency",
+        3: "Proficient",
+        4: "Used in a Large Project",
+        5: "Used Professionally",
+        6: "Used in a Project & Professionally",
     }
 
     const languagesOptions = {
@@ -72,9 +73,9 @@ function LanguageProficiency() {
             y: {
                 ticks: {
                     min: 0,
-                    max: 5,
+                    max: 6,
                     stepSize: 1,
-                    suggestedMax: 5,
+                    suggestedMax: 6,
                     callback: function(label, index, labels) {
                         return yAxisLabels[label];
                     }
