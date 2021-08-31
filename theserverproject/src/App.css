@@ -50,11 +50,14 @@
     color: #777;
     font-family: sans-serif;
     font-size: 18px;
+    transition: filter 900ms, font-size 900ms;
 }
 
 .navigator-link:hover {
     color: red;
     cursor: pointer;
+    filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, .25));
+    font-size: 20px;
 }
 
 .active-navigator-link {
@@ -107,6 +110,10 @@
     justify-content: center;
     align-items: center;
     width: 25%;
+}
+
+.right-arrow {
+    border-radius: 50%;
 }
 
 .right-arrow:hover {

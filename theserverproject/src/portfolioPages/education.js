@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSpring, animated} from 'react-spring';
 import { Card, CardContent } from '@material-ui/core';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
+import { Fade, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
 
 import degreeIcon from "../assets/DegreeIcon.png";
 import gpaIcon from "../assets/GpaIcon.png";
@@ -83,8 +83,8 @@ function Education() {
                         <p className="education-card-subtext">Degree completed August 2021</p>
                     </CardContent>
                 </Card>
-            </div>
-            {displayGradeTable && 
+            </div> 
+            <Fade in={displayGradeTable}>
                 <Card className="grade-table-modal" onMouseLeave={() => {setDisplayGradeTable(false)}}>
                     <CardContent className="grade-table-content">
                         <p className="grade-table-title">Uvic 9.0 Grade Scale Conversion</p>
@@ -107,14 +107,14 @@ function Education() {
                         </TableContainer>
                     </CardContent>
                 </Card>
-            }
-            {displayTranscript &&
+            </Fade>
+            <Fade in={displayTranscript}>
                 <Card className="transcript-modal" onMouseLeave={() => {setDisplayTranscript(false)}}>
                     <CardContent>
                         <iframe src={transcript} title="Unofficial Transcript" className="transcript-iframe"></iframe>
                     </CardContent>
                 </Card>
-            }
+            </Fade>
         </animated.div>
     );
 }

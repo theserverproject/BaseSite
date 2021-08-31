@@ -32,8 +32,15 @@
 }
 
 .education-card {
-    height: 260px;
+    height: 175px;
+    overflow: hidden;
     width: auto;
+    transition: height 900ms, filter 900ms !important;
+}
+
+.education-card:hover {
+    height: 240px;
+    filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, .25));
 }
 
 .education-circle {
