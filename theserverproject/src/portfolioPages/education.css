@@ -35,12 +35,13 @@
     height: 175px;
     overflow: hidden;
     width: auto;
-    transition: height 900ms, filter 900ms !important;
+    background-color: white;
+
+    transition: height 900ms, filter 900ms, box-shadow 750ms;
 }
 
 .education-card:hover {
     height: 240px;
-    filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, .25));
 }
 
 .education-circle {
@@ -60,17 +61,15 @@
     align-items: center;
 }
 
-.education-card-content > p {
-    margin: 0 0 10px 0;
-}
-
 .education-card-title {
     font-size: 13px;
     font-weight: bold;
+    margin: 0 0 10px 0;
 }
 
 .education-card-subtext {
     font-size: 15px;
+    margin: 0 0 10px 0;
 }
 
 .degree-icon {

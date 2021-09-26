@@ -1,0 +1,29 @@
+.invisible-fader {
+    visibility: hidden;
+}
+
+.fader {
+    visibility: visible;
+}
+
+.fadein-animation {
+    animation-name: fadein;
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+}
+
+.fadeout-animation {
+    animation-name: fadeout;
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+}
+
+@keyframes fadein {
+ from {opacity: 0;}
+ to {opacity: 1;}   
+}
+
+@keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

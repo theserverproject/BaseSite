@@ -1,4 +1,4 @@
-import {Card} from '@material-ui/core';
+import {Card} from '../components';
 import {useSpring, animated} from 'react-spring';
 import { Bar } from 'react-chartjs-2';
 

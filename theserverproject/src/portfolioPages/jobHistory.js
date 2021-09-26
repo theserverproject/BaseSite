@@ -1,5 +1,5 @@
 import { animated, useTransition } from 'react-spring';
-import { Card, CardContent } from '@material-ui/core';
+import { Card } from '../components';
 
 import cradlePointLogo from "../assets/CradlepointLogo.png";
 import uvicLogo from "../assets/UVicLogo.jpg";
@@ -50,24 +50,22 @@ function JobHistory() {
         },
         {
             "company": "Tutela",
-            "employmentType": "Co-op/Part-time",
+            "employmentType": "Full Time/Part Time",
             "logo": tutelaLogo,
             "start": "Jan 2020",
             "end": "Dec 2020",
             "duration": "1 yr",
             "title": "Jr. Java Developer"
         }
-    ].map((job, indx, arr) => {
+    ].map((job) => {
         return (
             <Card className="job-card">
-                <CardContent>
-                    <img className="company-logo" src={job.logo} alt={`${job.company} Logo`}></img>
-                    <div className="job-info">
-                        <div className="company-name">{`${job.company} | ${job.employmentType}`}</div>
-                        <div className="company-title">{job.title}</div>
-                        <div className="company-duration">{`${job.start} - ${job.end} (${job.duration})`}</div>
-                    </div>
-                </CardContent>
+                <img className="company-logo" src={job.logo} alt={`${job.company} Logo`}></img>
+                <div className="job-info">
+                    <div className="company-name">{`${job.company} | ${job.employmentType}`}</div>
+                    <div className="company-title">{job.title}</div>
+                    <div className="company-duration">{`${job.start} - ${job.end} (${job.duration})`}</div>
+                </div>
             </Card>
         );
     });

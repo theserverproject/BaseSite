@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSpring, animated} from 'react-spring';
-import { Card, CardContent } from '@material-ui/core';
-import { Fade, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
+import { Card, Fader } from '../components';
 
 import degreeIcon from "../assets/DegreeIcon.png";
 import gpaIcon from "../assets/GpaIcon.png";
@@ -54,67 +54,61 @@ function Education() {
 
             <div className="education">
                 <Card className="education-card">
-                    <CardContent className="education-card-content">
-                        <div className="education-circle">
-                            <img className="degree-icon education-icon" src={degreeIcon} alt="Degree"></img>
-                        </div>
-                        <p className="education-card-title">Bachelor's of Software Engineering</p>
-                        <p className="education-card-subtext">Faculty of Engineering</p>
-                        <p className="education-card-subtext">University of Victoria</p>
-                    </CardContent>
+                    <div className="education-circle">
+                        <img className="degree-icon education-icon" src={degreeIcon} alt="Degree"></img>
+                    </div>
+                    <p className="education-card-title">Bachelor's of Software Engineering</p>
+                    <p className="education-card-subtext">Faculty of Engineering</p>
+                    <p className="education-card-subtext">University of Victoria</p>
                 </Card>
                 <Card className="education-card">
-                    <CardContent className="education-card-content">
-                        <div className="education-circle">
-                            <img className="gpa-icon education-icon" src={gpaIcon} alt="GPA"></img>
-                        </div>
-                        <p className="education-card-title">Cumulative GPA: 6.50 (B+/A-)</p>
-                        <p className="education-card-subtext hover-text" onClick={() => setDisplayGradeTable(true)}>UVic Grade scale conversion</p>
-                        <p className="education-card-subtext hover-text" onClick={() => setDisplayTranscript(true)}>Unofficial Transcript</p>
-                    </CardContent>
+                    <div className="education-circle">
+                        <img className="gpa-icon education-icon" src={gpaIcon} alt="GPA"></img>
+                    </div>
+                    <p className="education-card-title">Cumulative GPA: 6.50 (B+/A-)</p>
+                    <p className="education-card-subtext hover-text" onClick={() => setDisplayGradeTable(true)}>UVic Grade scale conversion</p>
+                    <p className="education-card-subtext hover-text" onClick={() => setDisplayTranscript(true)}>Unofficial Transcript</p>
                 </Card>
                 <Card className="education-card">
-                    <CardContent className="education-card-content">
-                        <div className="education-circle">
-                            <img className="calendar-icon education-icon" src={calendarIcon} alt="Dates"></img>
-                        </div>
-                        <p className="education-card-title">Degree completed in 5 years</p>
-                        <p className="education-card-subtext">Degree started September 2016</p>
-                        <p className="education-card-subtext">Degree completed August 2021</p>
-                    </CardContent>
+                    <div className="education-circle">
+                        <img className="calendar-icon education-icon" src={calendarIcon} alt="Dates"></img>
+                    </div>
+                    <p className="education-card-title">Degree completed in 5 years</p>
+                    <p className="education-card-subtext">Degree started September 2016</p>
+                    <p className="education-card-subtext">Degree completed August 2021</p>
                 </Card>
             </div> 
-            <Fade in={displayGradeTable}>
+            <Fader
+                visible={displayGradeTable}
+            >
                 <Card className="grade-table-modal" onMouseLeave={() => {setDisplayGradeTable(false)}}>
-                    <CardContent className="grade-table-content">
-                        <p className="grade-table-title">Uvic 9.0 Grade Scale Conversion</p>
-                        <TableContainer component={Paper}>
-                            <Table>
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell>Grade</TableCell>
-                                        <TableCell align="right">9 point scale <br/>(C+ = 3)</TableCell>
-                                        <TableCell align="right">4 point scale <br/>(C+ = 2.3)</TableCell>
-                                        <TableCell align="right">4 point scale <br/>(C+ = 2.33)</TableCell>
-                                        <TableCell align="right">4.33 point scale <br/>(C+ = 2.3)</TableCell>
-                                        <TableCell align="right">4.33 point scale <br/>(C+ = 2.33)</TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {dataTableRows}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                    </CardContent>
+                    <p className="grade-table-title">Uvic 9.0 Grade Scale Conversion</p>
+                    <TableContainer component={Paper}>
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Grade</TableCell>
+                                    <TableCell align="right">9 point scale <br/>(C+ = 3)</TableCell>
+                                    <TableCell align="right">4 point scale <br/>(C+ = 2.3)</TableCell>
+                                    <TableCell align="right">4 point scale <br/>(C+ = 2.33)</TableCell>
+                                    <TableCell align="right">4.33 point scale <br/>(C+ = 2.3)</TableCell>
+                                    <TableCell align="right">4.33 point scale <br/>(C+ = 2.33)</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {dataTableRows}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 </Card>
-            </Fade>
-            <Fade in={displayTranscript}>
-                <Card className="transcript-modal" onMouseLeave={() => {setDisplayTranscript(false)}}>
-                    <CardContent>
-                        <iframe src={transcript} title="Unofficial Transcript" className="transcript-iframe"></iframe>
-                    </CardContent>
+            </Fader>
+            <Fader
+                visible={displayTranscript}
+            >
+                <Card className="transcript-modal" onMouseLeave={() => {setDisplayTranscript(false); console.log("mouseleave")}}>
+                    <iframe src={transcript} title="Unofficial Transcript" className="transcript-iframe"></iframe>
                 </Card>
-            </Fade>
+            </Fader>    
         </animated.div>
     );
 }
