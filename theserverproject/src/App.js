@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import { Landing, JobHistory, Education, LanguageProficiency } from './portfolioPages';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import { Fade } from '@material-ui/core';
-
+import { Fader } from './components';
 import logo from './assets/Logo.png';
 import './App.css';
 import Projects from './portfolioPages/projects';
@@ -103,30 +102,18 @@ class App extends Component {
                      onMouseLeave={() => this.setState({leftArrowVisible: false})}
                      onClick={() => displayLeftArrow && this.incrementPage(-1)}
                 >
-                    {displayLeftArrow ? 
-                        <Fade in={true}>
-                            <NavigateBeforeIcon className="left-arrow" fontSize="inherit"/>
-                        </Fade>
-                    :
-                        <Fade in={false}>
-                            <NavigateBeforeIcon fontSize="inherit"/>
-                        </Fade>
-                    }
+                    <Fader visible={displayLeftArrow}>
+                        <NavigateBeforeIcon className="left-arrow" fontSize="inherit"/>
+                    </Fader>
                 </div>
                 <div className="right-arrow-box"
                      onMouseEnter={() => this.setState({rightArrowVisible: true})}
                      onMouseLeave={() => this.setState({rightArrowVisible: false})}
                      onClick={() => displayRightArrow && this.incrementPage(1)}
                 >
-                    {displayRightArrow ? 
-                        <Fade in={true}>
-                            <NavigateNextIcon className="right-arrow" fontSize="inherit"/>
-                        </Fade>
-                    :
-                        <Fade in={false}>
-                            <NavigateNextIcon fontSize="inherit"/>
-                        </Fade>
-                    }
+                    <Fader visible={displayRightArrow}>
+                        <NavigateNextIcon className="right-arrow" fontSize="inherit"/>
+                    </Fader>
                 </div>
             </div>
         );

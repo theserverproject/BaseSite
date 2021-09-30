@@ -20,8 +20,8 @@
 .education {
     text-align: center;
     margin-top: 8%;
-    display: grid;
-    grid-template-columns: 25% 25% 25%;
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
 }
 
@@ -32,16 +32,16 @@
 }
 
 .education-card {
-    height: 175px;
+    height: 140px;
     overflow: hidden;
-    width: 300px;
+    width: 215px;
     background-color: white;
 
     transition: height 900ms, filter 900ms, box-shadow 750ms;
 }
 
 .education-card:hover {
-    height: 240px;
+    height: 200px;
 }
 
 .education-circle {
@@ -103,7 +103,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 700px;
-    height: 750px;
+    height: 700px;
 }
 
 .grade-table-content {
@@ -121,7 +121,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 700px;
-    height: 750px;
+    height: 700px;
 }
 
 .transcript-iframe {

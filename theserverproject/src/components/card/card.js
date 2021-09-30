@@ -8,9 +8,7 @@ function Card(props) {
 
     return (
         <div className={containerClassName.join(" ")} {...remaningProps}>
-            <div className="card-body">
-                {children}
-            </div>
+            {children}
         </div>
     );
 }

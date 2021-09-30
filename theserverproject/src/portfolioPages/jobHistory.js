@@ -22,7 +22,7 @@ function JobHistory() {
             end: "Current",
             duration: "Ongoing",
             title: "Software Engineer",
-            longDescription: ""
+            longDescription: "Aiding in development of Battlefy's core products."
         },
         {
             company: "Tutela",
@@ -32,7 +32,7 @@ function JobHistory() {
             end: "Dec 2020",
             duration: "1 yr",
             title: "Jr. Java Developer",
-            longDescription: ""
+            longDescription: "Created data analysis tools to detect anomolies in the core data product."
         },
         {
             company: "Audette",
@@ -42,7 +42,7 @@ function JobHistory() {
             end: "Sept 2019",
             duration: "5 mos",
             title: "Jr. Full Stack Developer",
-            longDescription: ""
+            longDescription: "Aided in development of energy usage and portfolio management web-app."
         },
         {
             company: "Bambora",
@@ -52,7 +52,7 @@ function JobHistory() {
             end: "Dec 2018",
             duration: "4 mos",
             title: "Software Developer",
-            longDescription: ""
+            longDescription: "Aided in development of a SocketIO based system communication over a custom banking protocol."
         },
         {
             company: "University of Victoria",
@@ -62,7 +62,7 @@ function JobHistory() {
             end: "Apr 2018",
             duration: "4 mos",
             title: "Software Development Intern",
-            longDescription: ""
+            longDescription: "Developed a suite of tools to analyze weather data for use in a published paper."
         },
         {
             company: "Cradlepoint",
@@ -72,18 +72,33 @@ function JobHistory() {
             end: "Sept 2017",
             duration: "4 mos",
             title: "QA Software Development Intern",
-            longDescription: ""
+            longDescription: "Developed a ML-based tool to detect emergent failures based on system logging."
         }
     ].map((job) => {
         return (
-            <FlipCard className="job-card">
-                <img className="company-logo" src={job.logo} alt={`${job.company} Logo`}></img>
-                <div className="job-info">
-                    <div className="company-name">{`${job.company} | ${job.employmentType}`}</div>
-                    <div className="company-title">{job.title}</div>
-                    <div className="company-duration">{`${job.start} - ${job.end} (${job.duration})`}</div>
-                </div>
-            </FlipCard>
+            <FlipCard className="job-card"
+                cardFrontFace={
+                    <>
+                        <img
+                            className="company-logo"
+                            src={job.logo}
+                            alt={`${job.company} Logo`}
+                            onSelect={event => event.preventDefault()}    
+                        />
+                        <div className="job-info">
+                            <div className="company-name">{`${job.company} | ${job.employmentType}`}</div>
+                            <div className="company-title">{job.title}</div>
+                            <div className="company-duration">{`${job.start} - ${job.end} (${job.duration})`}</div>
+                        </div>
+                    </>
+                }
+                cardBackFace={
+                    <>
+                        <h3>Description</h3>
+                        <p>{job.longDescription}</p>
+                    </>
+                }
+            />
         );
     });
 

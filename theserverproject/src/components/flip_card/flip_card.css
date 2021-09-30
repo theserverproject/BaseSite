@@ -1,0 +1,28 @@
+.flipped-card, .unflipped-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 250ms, height 250ms, box-shadow 750ms;
+    transform-style: preserve-3d;
+
+}
+
+.flipped-card {
+    transform: rotateY(180deg);
+}
+
+.unflipped-card {
+    transform: rotateY(0deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    transform: rotateY(0deg);
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
