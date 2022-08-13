@@ -1,2 +1,1 @@
-# BaseSite
-The base website (theserverproject.com or www.theserverproject.com)
+This old portfolio has been superseded by https://github.com/Ross-Alexandra/portfolio
